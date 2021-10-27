@@ -11,6 +11,7 @@ const  {CleanWebpackPlugin}  = require('clean-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
  
 module.exports = {
@@ -20,7 +21,7 @@ module.exports = {
 	mode: 'development',
 	entry: './src/index.js',
 	output: {
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, 'app/dist'),
 		filename: 'scripts.js'
     },
     resolve: {
@@ -140,6 +141,11 @@ module.exports = {
           }),
         new LiveReloadPlugin(),
         new  CleanWebpackPlugin ( ),
+        new CopyPlugin({
+            patterns: [
+              { from: "images/*.*"},
+            ],
+          }),
     ]
 };
 

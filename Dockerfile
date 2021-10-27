@@ -1,4 +1,4 @@
-FROM PHP:7.4-apache
+FROM php:7.4-apache
 
 # install the PHP extensions we need
 RUN set -eux; \
@@ -49,8 +49,6 @@ RUN set -eux; \
 
 RUN apt-get update \
   	&& apt-get install -y \
-  	nodejs \
-  	mc \
   	git \
     libzip-dev \
     libc-client-dev \
@@ -70,8 +68,7 @@ RUN apt-get update \
     gnupg2 \
     libpq5 \
 	libz-dev\
-	zip \
-  	nano
+	zip 
 
 
 
@@ -83,13 +80,13 @@ RUN apt-get update \
 
 # set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php
-RUN { \
-		echo 'opcache.memory_consumption=128'; \
-		echo 'opcache.interned_strings_buffer=8'; \
-		echo 'opcache.max_accelerated_files=4000'; \
-		echo 'opcache.revalidate_freq=0'; \
-		echo 'opcache.fast_shutdown=1'; \
-	} > /usr/local/etc/php/conf.d/opcache-recommended.ini 
+#RUN { \
+#		echo 'opcache.memory_consumption=128'; \
+#       echo 'opcache.interned_strings_buffer=8'; \
+#		echo 'opcache.max_accelerated_files=4000'; \
+#		echo 'opcache.revalidate_freq=0'; \
+#		echo 'opcache.fast_shutdown=1'; \
+#	} > /usr/local/etc/php/conf.d/opcache-recommended.ini 
 
 #COPY --from=composer:1.10 /usr/bin/composer /usr/local/bin/
 
@@ -103,19 +100,19 @@ RUN apt-get update \
   nano
 
 
-RUN  curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+#RUN  curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 
 # Install Drush
-RUN composer global require drush/drush && \
-    composer global update
+#RUN composer global require drush/drush && \
+#    composer global update
     
 
 
-RUN npm install --global yarn
-RUN npm i npm@latest -g
+#RUN npm install --global yarn
+#RUN npm i npm@latest -g
 
-RUN yarn global add @vue/cli @vue/cli-service-global
+#RUN yarn global add @vue/cli @vue/cli-service-global
 
 
 # Instalo git y vim.
@@ -124,13 +121,13 @@ RUN yarn global add @vue/cli @vue/cli-service-global
 # https://www.drupal.org/node/3060/release
 #ENV DRUPAL_VERSION 9.1.5
 
-ENV COMPOSER_ALLOW_SUPERUSER 1
+#ENV COMPOSER_ALLOW_SUPERUSER 1
 
 #ENV APACHE_DOCUMENT_ROOT=/var/www/html/dist
 #RUN sed -ri -e 's!/var/www/html!/var/www/html/dist!g' /etc/apache2/sites-available/*.conf
 #RUN sed -ri -e 's!/var/www/!/var/www/html/dist!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
-ADD ./php.ini /usr/local/etc/php/conf.d/php.ini
+#ADD ./php.ini /usr/local/etc/php/conf.d/php.ini
 
 WORKDIR /var/www/html
 # /opt
@@ -153,4 +150,4 @@ WORKDIR /var/www/html
 #   delete composer cache
 #	rm -rf "$COMPOSER_HOME"
 
-ENV PATH=${PATH}:/opt/vendor/bin
+#ENV PATH=${PATH}:/opt/vendor/bin

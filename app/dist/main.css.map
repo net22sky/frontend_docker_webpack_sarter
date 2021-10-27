@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/scss/main.scss"],"names":[],"mappings":"AAAA,GACI,iBAAkB,CAClB,SAAU,C","file":"../dist/main.css","sourcesContent":["h1{\n    text-align: center;\n    color: red;\n}"],"sourceRoot":""}

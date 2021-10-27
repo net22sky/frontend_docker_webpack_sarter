@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "docker",
   "main": "webpack.build.config.js",
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/net22sky/frontend_docker_webpack_sarter.git"
   },
@@ -39,7 +39,7 @@
     "browser-sync": "^2.26.12",
     "cache-loader": "^4.1.0",
     "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^6.0.3",
+    "copy-webpack-plugin": "^6.4.1",
     "cross-env": "^7.0.2",
     "css-loader": "^4.2.1",
     "css-mqpacker": "^7.0.0",
