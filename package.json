@@ -1,0 +1,90 @@
+{
+  "name": "docker_webpack_starter",
+  "version": "1.0.0",
+  "description": "docker",
+  "main": "webpack.build.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/net22sky/frontend_docker_webpack_sarter.git"
+  },
+  "keywords": [
+    "docker",
+    "wepack",
+    "frontend",
+    "starter"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production --config webpack.build.config.js",
+    "start": "webpack --watch",
+    "b": "webpack-dashboard webpack-dev-server --history-api-fallback --inline --progress ",
+    "dev": "webpack --mode development --config   webpack.dev.config.js --progress --colors --watch"
+  },
+  "browserList": [
+    ">1%",
+    "last 5 version"
+  ],
+  "author": "net22sky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/net22sky/frontend_docker_webpack_sarter/issues"
+  },
+  "homepage": "https://github.com/net22sky/frontend_docker_webpack_sarter#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.1.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.26.12",
+    "cache-loader": "^4.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "cross-env": "^7.0.2",
+    "css-loader": "^4.2.1",
+    "css-mqpacker": "^7.0.0",
+    "file-loader": "^6.0.0",
+    "helpers": "0.0.6",
+    "imagemin-jpegtran": "^5.0.2",
+    "mini-css-extract-plugin": "^0.10.0",
+    "node-sass": "^4.14.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^9.0.3",
+    "sass-rem": "^2.0.1",
+    "select2": "^4.0.13",
+    "svg-inline-loader": "^0.8.2",
+    "terser-webpack-plugin": "^4.2.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue-loader": "^15.9.5",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dashboard": "^3.2.0",
+    "webpack-livereload-plugin": "^3.0.2",
+    "webpack-merge": "^5.1.3"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "bootstrap": "^4.1.3",
+    "botstrap": "^0.20.1",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.20",
+    "natives": "^1.1.6",
+    "npx": "^10.2.2",
+    "owl.carousel": "^2.3.4",
+    "parallax-js": "^3.1.0",
+    "popper.js": "^1.16.1",
+    "slick-carousel": "^1.8.1",
+    "stellar": "0.0.0",
+    "terser": "^5.9.0",
+    "v-calendar": "^2.3.4",
+    "vue": "^2.6.12",
+    "vueperslides": "^2.12.1",
+    "vuex": "^3.5.1",
+    "webpack-visualizer-plugin": "^0.1.11",
+    "wow.js": "^1.2.2"
+  }
+}
