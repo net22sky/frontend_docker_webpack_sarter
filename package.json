@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "docker",
   "main": "webpack.build.config.js",
-  "repository": {
+    "repository": {
     "type": "git",
     "url": "git+https://github.com/net22sky/frontend_docker_webpack_sarter.git"
   },
