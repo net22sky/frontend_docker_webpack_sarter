@@ -6,11 +6,11 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 const autoprefixer = require('autoprefixer');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimaizeCssAccetPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserWebpackPlugin = require('terser-webpack-plugin');
 const  {CleanWebpackPlugin}  = require('clean-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin');
 var Visualizer = require('webpack-visualizer-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 
 
@@ -21,7 +21,7 @@ module.exports = {
     mode: 'development',
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'app/dist/'),
         filename: 'scripts.js'
     },
     resolve: {
@@ -130,7 +130,7 @@ module.exports = {
             filename: '[file].map'
         }),*/
         new miniCss({
-            filename: '../dist/main.css',
+            filename: '../app/dist/main.css',
         }),
         new webpack.ProvidePlugin({
             $: "jquery/dist/jquery.min.js",
@@ -141,6 +141,11 @@ module.exports = {
             filename: './statistics.html'
         }),
         new  CleanWebpackPlugin ( ),
+        new CopyPlugin({
+            patterns: [
+              { from: "./images/*.*"},
+            ],
+          }),
     ]
 };
 

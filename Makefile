@@ -43,8 +43,17 @@ client:
 	docker-compose exec php_front /bin/sh
 
 
+# npm run dev
 
+dev:
+	docker exec php_front  bash -c  "npm run dev"
 
+bui:
+	docker exec php_front  bash -c  "npm run build"
+
+upd: up dev
+
+upb: up bui
 
 
 #-----------------------------------------------------------

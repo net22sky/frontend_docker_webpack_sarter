@@ -21,7 +21,7 @@ module.exports = {
 	mode: 'development',
 	entry: './src/index.js',
 	output: {
-		path: path.resolve(__dirname, 'app/dist'),
+		path: path.resolve(__dirname, 'app/dist/'),
 		filename: 'scripts.js'
     },
     resolve: {
@@ -143,7 +143,9 @@ module.exports = {
         new  CleanWebpackPlugin ( ),
         new CopyPlugin({
             patterns: [
-              { from: "images/*.*"},
+              { 
+                from: "images/*.*",
+                },
             ],
           }),
     ]
